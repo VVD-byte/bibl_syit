@@ -22,7 +22,7 @@
 -webkit-background-size: cover; -moz-background-size: cover;
 background-size: cover; -o-background-size: cover;">
 <div class="float-right nav">
-    <div class="wrapper" style="display:inline-block; width:94%">
+    <div class="wrapper about_topline">
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#fff!important;">
                 <a class="navbar-brand text-nav-left" href="#">{% block type %}{% endblock %}</a>
@@ -45,28 +45,29 @@ background-size: cover; -o-background-size: cover;">
         <div class="text-content">
             {% block content %}{% endblock %}
         </div>
-    </div>
-    {% if conn %}
-    <style>
+        {% if conn %}
+        <style>
         .nav{
             margin-right:0%;
             }
-    </style>
-    <div class="nav_connect float-right">
-        <div class="conn">
-            <a href="#"><img src="{% static 'img/f_b.png' %}" width="42px" height="42px"></a>
+
+        </style>
+        <div class="nav_connect" style="position:relative">
+            <div class="conn">
+                <a href="#"><img src="{% static 'img/f_b.png' %}" width="35px" height="35px"></a>
+            </div>
+            <div class="conn">
+                <a href="#"><img src="{% static 'img/vk.png' %}" width="35px" height="35px"></a>
+            </div>
+            <div class="conn">
+                <a href="#"><img src="{% static 'img/mail.png' %}" width="35px" height="35px"></a>
+            </div>
+            <div style="position: absolute; bottom: 5%;">
+                <img src="{% static 'img/2002-2020.png' %}" width="10" height="141">
+            </div>
         </div>
-        <div class="conn">
-            <a href="#"><img src="{% static 'img/vk.png' %}" width="42px" height="42px"></a>
-        </div>
-        <div class="conn">
-            <a href="#"><img src="{% static 'img/skype.png' %}" width="42px" height="42px"></a>
-        </div>
-        <div class="conn">
-            <a href="#"><img src="{% static 'img/mail.png' %}" width="42px" height="42px"></a>
-        </div>
+        {% endif %}
     </div>
-    {% endif %}
 </div>
 </body>
 </html>
