@@ -18,26 +18,25 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 </head>
-<body style="background:url('{% static "img/Page_Index.png" %}') no-repeat center center fixed;
--webkit-background-size: cover; -moz-background-size: cover;
-background-size: cover; -o-background-size: cover;">
-<div class="float-right">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#fff!important;">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav" style="font-size:10px;">
-                <a class="nav-item nav-link" href="/about">ABOUT</a>
-                <a class="nav-item nav-link" href="/life">ПО ЖИЗНИ</a>
-                <a class="nav-item nav-link" href="/work">ПО ДЕЛУ</a>
-                <a class="nav-item nav-link" href="/line">ЛИНЕЙКА РОСТА</a>
-                <a class="nav-item nav-link" href="/connect">ОТДЕЛЕНИЕ СВЯЗИ</a>
-                <a class="nav-item nav-link" href="/cv">CV</a>
-            </div>
-        </div>
-    </nav>
+<body style="background:url('{% static "img/Page_Index.png" %}') no-repeat center center fixed; background-size: auto 100%;">
+<div class="start_nav" style="display:inline-block; width:100%">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand text-nav-left float-left" style="font-size:150% !important; padding:10%;">EELMA.NET</a>
+                <button style="display:inline-block;" class="float-right navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav menu" style="font-size:10px;">
+                        <a class="nav-item nav-link menu-text" href="/about">ABOUT</a>
+                        <a class="nav-item nav-link menu-text" href="/life">ПО ЖИЗНИ</a>
+                        <a class="nav-item nav-link menu-text" href="/work">ПО ДЕЛУ</a>
+                        <a class="nav-item nav-link menu-text" href="/line">ЛИНЕЙКА РОСТА</a>
+                        <a class="nav-item nav-link menu-text" href="/connect">ОТДЕЛЕНИЕ СВЯЗИ</a>
+                        <a class="nav-item nav-link menu-text" href="/cv">CV</a>
+                    </div>
+                </div>
+            </nav>
 </div>
 </body>
 </html>

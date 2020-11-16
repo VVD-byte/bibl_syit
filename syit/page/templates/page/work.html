@@ -1,6 +1,63 @@
 {% extends 'syit/base_all.html' %}
+{% load static %}
 {% block title %}{{ theme }}{% endblock %}
 {% block type %}{{ theme }}{% endblock %}
 {% block content %}
-
+<div class="h-100" style="display: inline-block;">
+    <div class="h-100 left_work">
+        <div class="float-left">
+            <div style="padding-right:10%">
+                <a class="menu-text" href="#">2002</a>
+                <a class="menu-text" href="#">2003</a>
+                <a class="menu-text" href="#">2004</a>
+                <a class="menu-text" href="#">2005</a>
+                <a class="menu-text" href="#">2006</a>
+                <a class="menu-text" href="#">2007</a>
+                <a class="menu-text" href="#">2008</a>
+                <a class="menu-text" href="#">2009</a>
+                <a class="menu-text" href="#">2010</a>
+                <a class="menu-text" href="#">2011</a>
+                <a class="menu-text" href="#">2012</a>
+                <a class="menu-text" href="#">2013</a>
+                <a class="menu-text" href="#">2014</a>
+                <a class="menu-text" href="#">2015</a>
+                <a class="menu-text" href="#">2016</a>
+                <a class="menu-text" href="#">2017</a>
+                <a class="menu-text" href="#">2018</a>
+                <a class="menu-text" href="#">2019</a>
+                <a class="menu-text" href="#">2020</a>
+            </div>
+            <div style="align-content:center; border-top: 1px solid #D9E4DF; border-bottom: 1px solid #D9E4DF; margin-top:10px">
+                <a style="font-size:80%; color:rgba(235, 87, 87, 1) !important">Другие проекты</a>
+            </div>
+            <div class="work_img">
+                <img src="{% static 'img/pk.png' %}" width="100%">
+                <a style="font-size: 50%;">© 2002 - 2019, Юрий Ээльмаа</a>
+            </div>
+        </div>
+    </div>
+    <div class="work_winos float-right">
+        <div class="about_middle_block">
+            <p class="about_middle_text" style="line-height: 1.2em;"> Я всю жизнь живу и работаю в образовании. Был
+                учеником → студентом → аспирантом. Работал в школе, организациях повышения квалификации, вузах,
+                крупнейшем детском центре «Артек». Преподавал сам, учил других, управлял, создавал проекты. Думаю, что
+                больше, чем за 20 лет работы научился что-то видеть в системе образования.<br/><br/>В этом разделе
+                размещены мои тексты, которые написаны на разных этапах профессиональной деятельности.<br/><br/>Написанные
+                не на работе, а по личному размышлению, тексты про образование, можно найти в разделе «По жизни» по
+                одноименному тегу.</p>
+        </div>
+        <div class="float-left">
+            <img class="img_file" src="{% static 'img/pdf.png' %}" width="32" height="42">
+            <div class="work_img_text">
+                <div>
+                    <p class="work_fine_name">о некоторых аспектах стрижки травы на спортивных площадках международного
+                        детского центра «артек» и перспективных территориях оного</p>
+                </div>
+                <div>
+                    <p class="work_bottom_data_file">31.12.2018 Журнал «Директор пионерского лагеря», №4, 2018</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
