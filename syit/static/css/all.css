@@ -48,7 +48,7 @@
 }
 
 .conn{
-    margin-top:10%;
+    margin-top:20%;
 }
 
 .data{
@@ -194,8 +194,8 @@
     line-height: 15px;
 }
 
-.cv_middle_block{
-    width: 80%;
+.cv_middle_block_left{
+    width: 75%;
     float: left;
     margin-left: 5%;
 }
@@ -210,6 +210,127 @@
     margin-bottom: 0.6%;
     margin-top: 3%;
 }
+
+.cv_middle_block_right{
+    width: 20%;
+    float: left;
+}
+
+.cv_phone_number_block{
+    border: 1px dashed #C4CCCF;
+    box-sizing: border-box;
+    height: 25px;
+    border-radius: 15px;
+    margin-bottom: 10%;
+}
+
+.cv_phone_number_text{
+    font-family: PT Serif;
+    font-size: 12px;
+    opacity: 1;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+    color: #EB5757;
+    margin-left: 10%;
+}
+
+.cv_language_img_block{
+    width: 20%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 20%;
+}
+
+.cv_language_text_block{
+    width: 50%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 20%;
+}
+
+.cv_language_img{
+    border-radius: 100px;
+    box-shadow: 0 0 2px #666;
+}
+
+.cv_language_text{
+    float: left;
+    line-height: 1.1;
+    font-family: PT Serif;
+    font-style: normal;
+    font-size: 12px;
+    color: #4E6D76;
+    margin-bottom: 0%;
+    margin-left: 15%;
+}
+
+.cv_resume_photo{
+    margin-top: 40%;
+    margin-left: 15%;
+}
+
+.line_line{
+    width: 5%;
+    float: left;
+}
+
+.line_data_block{
+    width: 90%;
+    float: left;
+    margin-left: 3%;
+    margin-top: 1.5%;
+}
+
+.line_data_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: justify;
+    color: #4E6D76;
+}
+
+.line_photo{
+    margin-right: 1%;
+}
+
+.line_text_block{
+    margin-top: 1.5%;
+}
+
+.line_text{
+    font-family: PT Serif;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.5;
+    font-size: 10px;
+    text-align: justify;
+    color: #4E6D76;
+    padding-left: 8%;
+}
+
+.life_left_block{
+    width: 15%;
+    float: left;
+}
+
+.life_left_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 8px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #EB5757;
+    border-right: 1px solid #D9E4DF;
+    border-bottom: 1px solid #D9E4DF;
+}
+
+.life_right_block{
+    width: 70%;
+    float: left;
+}
+
 @media screen and (max-device-width: 991px) {
 .nav {width: 100%;
         margin:auto;

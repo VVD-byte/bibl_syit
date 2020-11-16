@@ -52,9 +52,16 @@ background-size: cover; -o-background-size: cover;">
             }
 
         </style>
-        <div class="nav_connect" style="position:relative">
+
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
+
+<div class="nav_connect" style="position:relative">
             <div class="conn">
-                <a href="#"><img src="{% static 'img/f_b.png' %}" width="35px" height="35px"></a>
+                <a href="#"><img src="{% static 'img/f_b.png' %}" width="35px" height="35px" style="margin-top: 70%;"></a>
             </div>
             <div class="conn">
                 <a href="#"><img src="{% static 'img/vk.png' %}" width="35px" height="35px"></a>
@@ -66,8 +73,3 @@ background-size: cover; -o-background-size: cover;">
                 <img src="{% static 'img/2002-2020.png' %}" width="10" height="141">
             </div>
         </div>
-        {% endif %}
-    </div>
-</div>
-</body>
-</html>
