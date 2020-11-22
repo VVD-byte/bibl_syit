@@ -1,0 +1,108 @@
+{% extends 'syit/base_all.html' %}
+{% load static %}
+{% block title %}{{ theme }}{% endblock %}
+{% block type %}{{ theme }}{% endblock %}
+{% block content %}
+<style>
+    @media screen and (max-device-width: 991px) {
+    .literatyra{
+        display: inline-block;
+        color: #FF7B6F !important;
+        font-size: 3.5vw !important;
+    }}
+
+</style>
+
+
+<div class="life_left_block">
+    <div class="life_left_text">
+        <table>
+            {% for i, number in left.items %}
+                <tr><td><a href="#" class="ssil_">{{ i }}</a><a href="#" class="life_left_number"> {{ number }}</a></td></tr>
+            {% endfor %}
+        </table>
+    </div>
+    <table style="margin-top: 7vh" class="life_left_text">
+        <tr class="life_years">
+            <td><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;"
+                   href="#">2000</a></td>
+            <td><a class="ssil_" href="#">2010</a></td>
+            <td><a class="ssil_" href="#">2020</a></td>
+        </tr>
+        <tr class="life_years">
+            <td><a class="ssil_" style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" href="#">2001</a>
+            </td>
+            <td><a class="ssil_" href="#">2011</a></td>
+            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2021</a>
+            </td>
+        </tr>
+        <tr class="life_years">
+            <td><a class="ssil_" href="#">2002</a></td>
+            <td><a class="ssil_" href="#">2012</a></td>
+            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2022</a>
+            </td>
+        </tr>
+        <tr class="life_years">
+            <td><a class="ssil_" href="#">2003</a></td>
+            <td><a class="ssil_" href="#">2013</a></td>
+            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2023</a>
+            </td>
+        </tr>
+        <tr class="life_years">
+            <td><a class="ssil_" href="#">2004</a></td>
+            <td><a class="ssil_" href="#">2014</a></td>
+            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2024</a>
+            </td>
+        </tr>
+        <tr class="life_years">
+            <td><a class="ssil_" href="#">2005</a></td>
+            <td><a class="ssil_" href="#">2015</a></td>
+            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2025</a>
+            </td>
+        </tr>
+        <tr class="life_years">
+            <td><a class="ssil_" href="#">2006</a></td>
+            <td><a class="ssil_" href="#">2016</a></td>
+            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2026</a>
+            </td>
+        </tr>
+        <tr class="life_years">
+            <td><a class="ssil_" href="#">2007</a></td>
+            <td><a class="ssil_" href="#">2017</a></td>
+            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2027</a>
+            </td>
+        </tr>
+        <tr class="life_years">
+            <td><a class="ssil_" href="#">2008</a></td>
+            <td><a class="ssil_" href="#">2018</a></td>
+            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2028</a>
+            </td>
+        </tr>
+        <tr class="life_years">
+            <td><a class="ssil_" href="#">2009</a></td>
+            <td><a class="ssil_" href="#">2019</a></td>
+            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2029</a>
+            </td>
+        </tr>
+    </table>
+    <img src="{% static 'img/life_computer.png' %}" width="70" height="60"
+         style="margin-top: 20%; margin-bottom: 10%; margin-left: 12%;">
+    <p class="life_left_end">© 2002 - 2019, Юрий Ээльмаа</p>
+</div>
+<div class="life_line_v">
+    <img src="{% static 'img/life_line_vertical.png' %}" width="0.5" height="335">
+</div>
+<div>
+    <div class="life_line_h">
+        <img src="{% static 'img/life_line_horizontal.png' %}" width="55" height="0.5">
+    </div>
+    <div>
+        <p style="white-space:pre-line">
+            {{ data.tag }}<br />
+            <b>{{ data.heading }}</b><br />
+            {{ data.date }}
+            {{ data.text }}
+        </p>
+    </div>
+</div>
+{% endblock %}

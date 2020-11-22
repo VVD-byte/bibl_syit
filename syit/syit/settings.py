@@ -25,8 +25,7 @@ SECRET_KEY = '(r3nt3qw=lh061+$u2t$ksb-f*oty14lg(^s%t_=eni+6n33fy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.34', '192.168.1.214', '127.0.0.1']
-
+ALLOWED_HOSTS = ['192.168.1.34', '192.168.1.214', '127.0.0.1', '88.201.176.196']
 
 # Application definition
 
@@ -128,8 +127,15 @@ if DEBUG:
     ]
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+'''
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static"),
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')'''
 
-LOGGING = {
+'''LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
@@ -159,4 +165,4 @@ LOGGING = {
             'handlers': ['console', 'file']
         }
     }
-}
+}'''

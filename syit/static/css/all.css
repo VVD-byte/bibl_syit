@@ -3,6 +3,262 @@
     left:20%;
     position: absolute;
 }
+.line_line{
+    width: 5%;
+    float: left;
+}
+
+.line_data_block{
+    width: 90%;
+    float: left;
+    margin-left: 3%;
+    margin-top: 1.5%;
+}
+
+.line_data_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: justify;
+    color: #4E6D76;
+}
+
+.cv_middle_block_right{
+    width: 20%;
+    float: left;
+}
+
+.line_photo{
+    margin-right: 1%;
+}
+
+.line_text_block{
+    margin-top: 1.5%;
+}
+
+.line_text{
+    font-family: PT Serif;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.5;
+    font-size: 10px;
+    text-align: justify;
+    color: #4E6D76;
+    padding-left: 8%;
+}
+
+.life_left_block{
+    width: 19%;
+    height: 100%;
+    float: left;
+}
+
+.life_left_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 9px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #EB5757;
+    margin-left: 12%;
+}
+
+.life_years{
+    width: 25%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100% !important;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #EB5757 !important;
+    margin-left: 12%;
+}
+
+.ssil_{
+    color: #EB5757 !important;
+    font-size: 140%;
+}
+.ssil_:visited{color: #EB5757 !important;}
+.ssil_:hover{color: #BD4B4B !important;}
+td{
+    padding-left: 0.5vh;
+    padding-right: 0.5vh;
+}
+
+.life_left_years_1{
+    float: left;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2vh;
+    line-height: 1.7;
+    text-transform: uppercase;
+    color: #EB5757;
+    margin-left: 12%;
+}
+
+.cv_phone_number_block{
+    border: 1px dashed #C4CCCF;
+    box-sizing: border-box;
+    height: 25px;
+    border-radius: 15px;
+    margin-bottom: 10%;
+}
+
+.cv_phone_number_text{
+    font-family: PT Serif;
+    font-size: 12px;
+    opacity: 1;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+    color: #EB5757;
+    margin-left: 10%;
+}
+
+.cv_language_img_block{
+    width: 20%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 20%;
+}
+
+.cv_language_text_block{
+    width: 50%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 20%;
+}
+
+.cv_language_img{
+    border-radius: 100px;
+    box-shadow: 0 0 2px #666;
+}
+
+.cv_language_text{
+    float: left;
+    line-height: 1.1;
+    font-family: PT Serif;
+    font-style: normal;
+    font-size: 12px;
+    color: #4E6D76;
+    margin-bottom: 0%;
+    margin-left: 15%;
+}
+
+.cv_resume_photo{
+    margin-top: 40%;
+    margin-left: 15%;
+}
+
+.life_left_years_2{
+    width: 25%;
+    float: left;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 9px;
+    line-height: 1.7;
+    text-transform: uppercase;
+    color: #EB5757;
+}
+
+.life_left_years_3{
+    width: 25%;
+    float: left;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 9px;
+    line-height: 1.7;
+    text-transform: uppercase;
+    color: #D9E4DF;
+}
+
+.life_left_end{
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 7px;
+    line-height: 19px;
+    color: #4E6D76;
+    margin-left: 5%;
+}
+
+.life_right_block{
+    width: 80%;
+    float: left;
+}
+
+.life_line_v{
+    width: 0.1%;
+    float: left;
+    margin-top: 0.3%;
+}
+
+.life_line_h{
+    width: 10%;
+    float:left;
+    line-height: 0.01%;
+}
+
+.life_right_heading{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 34px;
+    text-transform: uppercase;
+    color: #0C3440;
+    margin-top: 3%;
+    margin-left: 6%;
+    margin-bottom: 0%;
+}
+
+.life_right_lit{
+    color: #4E6D76;
+    font-size: 8px;
+}
+
+.life_right_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #0C3440;
+    margin-left: 6%;
+}
+
+.life_right_button{
+    border: 1px solid #EB5757;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    text-align: justify;
+    text-transform: uppercase;
+    color: #EB5757;
+    margin-left: 6%;
+    width: 15%;
+    padding-left: 2.5%;
+    float: left;
+}
+
+.lie_right_data{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    text-align: justify;
+    color: #4E6D76;
+    width: 15%;
+    float: left;
+    margin-left: 2%;
+}
 
 .nav_bot{
     width: 0.5em !important;
@@ -54,7 +310,6 @@
     line-height: 24px;
     text-align: justify;
     color: #0C3440;
-    padding: .5rem 1rem;
 }
 
 .text-nav-left{
@@ -67,10 +322,14 @@
     color: #0C3440;
 }
 
+.work_table{
+    font-size: 90% !important;
+}
+
 .menu-text{
     font-family: Montserrat;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 100%;
     text-align: right;
     text-transform: uppercase;
     color:rgba(235, 87, 87, 1) !important;
@@ -109,7 +368,7 @@
     display:inline-block;
     width: 90%;
     float: left;
-    padding: 10px;
+    padding: 40px;
     padding-top:5px;
 }
 
@@ -239,6 +498,13 @@
     line-height: 15px;
 }
 
+
+.cv_middle_block_left{
+    width: 75%;
+    float: left;
+    margin-left: 5%;
+}
+
 .cv_middle_block{
     width: 80%;
     float: left;
@@ -275,6 +541,10 @@
 }
 .phone_img{display: none;}
 .literatyra{display: none;}
+.life_left_number{
+    color:#A8A0A0 !important;
+    font-size: 1.1vh !important;
+}
 @media screen and (max-device-width: 991px) {
     .work_img_text{
         width: 75% !important;
@@ -380,4 +650,3 @@
         border-radius: 0px !important;
     }
    }
-

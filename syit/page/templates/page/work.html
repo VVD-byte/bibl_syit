@@ -3,36 +3,34 @@
 {% block title %}{{ theme }}{% endblock %}
 {% block type %}{{ theme }}{% endblock %}
 {% block content %}
+<style>
+    .ssil_{
+        font-size: 100% !important;
+    }
+</style>
 <div class="h-100" style="display: inline-block;">
     <div class="h-100 left_work">
-        <div class="float-left">
-            <div style="padding-right:10%">
-                <a class="menu-text" href="#">2002</a>
-                <a class="menu-text" href="#">2003</a>
-                <a class="menu-text" href="#">2004</a>
-                <a class="menu-text" href="#">2005</a>
-                <a class="menu-text" href="#">2006</a>
-                <a class="menu-text" href="#">2007</a>
-                <a class="menu-text" href="#">2008</a>
-                <a class="menu-text" href="#">2009</a>
-                <a class="menu-text" href="#">2010</a>
-                <a class="menu-text" href="#">2011</a>
-                <a class="menu-text" href="#">2012</a>
-                <a class="menu-text" href="#">2013</a>
-                <a class="menu-text" href="#">2014</a>
-                <a class="menu-text" href="#">2015</a>
-                <a class="menu-text" href="#">2016</a>
-                <a class="menu-text" href="#">2017</a>
-                <a class="menu-text" href="#">2018</a>
-                <a class="menu-text" href="#">2019</a>
-                <a class="menu-text" href="#">2020</a>
-            </div>
-            <div style="align-content:center; border-top: 1px solid #D9E4DF; border-bottom: 1px solid #D9E4DF; margin-top:10px">
+        <div style="margin-right: 10%; float:right;">
+            <table class="work_table">
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2002</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2012</a></td></tr>
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2003</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2013</a></td></tr>
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2004</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2014</a></td></tr>
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2005</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2015</a></td></tr>
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2006</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2016</a></td></tr>
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2007</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2017</a></td></tr>
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2008</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2018</a></td></tr>
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2009</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2019</a></td></tr>
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2010</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2020</a></td></tr>
+                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2011</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2021</a></td></tr>
+            </table>
+            <div style="margin-top: 10px;height: 1px; background-color: rgba(217, 228, 223, 1); width:114%"></div>
+            <div style="margin-top:10px">
                 <a style="font-size:80%; color:rgba(235, 87, 87, 1) !important">Другие проекты</a>
             </div>
+            <div style="margin-top:10px; height: 1px; background-color: rgba(217, 228, 223, 1); width: 114%"></div>
             <div class="work_img">
-                <img src="{% static 'img/pk.png' %}" width="100%">
-                <a style="font-size: 50%;">© 2002 - 2019, Юрий Ээльмаа</a>
+                <img src="{% static 'img/life_computer.png' %}" width="70" height="60" style="margin-top: 20%; margin-bottom: 10%; margin-left: 12%;">
+                <p class="life_left_end">© 2002 - 2019, Юрий Ээльмаа</p>
             </div>
         </div>
     </div>
