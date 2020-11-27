@@ -17,21 +17,22 @@
     <div class="life_left_text">
         <table>
             {% for i, number in left.items %}
-                <tr><td><a href="#" class="ssil_">{{ i }}</a><a href="#" class="life_left_number"> {{ number }}</a></td></tr>
+                <tr><td><a href="/{{ i }}" class="ssil_">{{ i }}</a><a href="#" class="life_left_number"> {{ number }}</a></td></tr>
             {% endfor %}
         </table>
     </div>
     <table style="margin-top: 7vh" class="life_left_text">
-        <tr class="life_years"><td><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;" href="#">2000</a></td><td><a class="ssil_" href="#">2010</a></td><td><a class="ssil_" href="#">2020</a></td></tr>
-        <tr class="life_years"><td><a class="ssil_" style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" href="#">2001</a></td><td><a class="ssil_" href="#">2011</a></td><td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2021</a></td></tr>
-        <tr class="life_years"><td><a class="ssil_" href="#">2002</a></td><td><a class="ssil_" href="#">2012</a></td><td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2022</a></td></tr>
-        <tr class="life_years"><td><a class="ssil_" href="#">2003</a></td><td><a class="ssil_" href="#">2013</a></td><td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2023</a></td></tr>
-        <tr class="life_years"><td><a class="ssil_" href="#">2004</a></td><td><a class="ssil_" href="#">2014</a></td><td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2024</a></td></tr>
-        <tr class="life_years"><td><a class="ssil_" href="#">2005</a></td><td><a class="ssil_" href="#">2015</a></td><td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2025</a></td></tr>
-        <tr class="life_years"><td><a class="ssil_" href="#">2006</a></td><td><a class="ssil_" href="#">2016</a></td><td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2026</a></td></tr>
-        <tr class="life_years"><td><a class="ssil_" href="#">2007</a></td><td><a class="ssil_" href="#">2017</a></td><td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2027</a></td></tr>
-        <tr class="life_years"><td><a class="ssil_" href="#">2008</a></td><td><a class="ssil_" href="#">2018</a></td><td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2028</a></td></tr>
-        <tr class="life_years"><td><a class="ssil_" href="#">2009</a></td><td><a class="ssil_" href="#">2019</a></td><td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2029</a></td></tr>
+        {% for i, item in years.items %}
+            <tr class="life_years">
+                {% for j, it in item.items %}
+                    {% if it == 0 %}
+                        <td><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;" href="/{{ j }}">{{ j }}</a></td>
+                    {% else %}
+                        <td><a class="ssil_" href="/{{ j }}">{{ j }}</a></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
     </table>
     <img src="{% static 'img/life_computer.png' %}" width="70" height="60" style="margin-top: 20%; margin-bottom: 10%; margin-left: 12%;">
     <p class="life_left_end">© 2002 - 2019, Юрий Ээльмаа</p>
@@ -47,7 +48,7 @@
     <div class="life_right_block">
         <p class="life_right_heading">{{ i.heading }} <span class="life_right_lit">{{ i.tag }}</span></p>
         <p class="life_right_text">{{ i.page_text }}</p>
-        <a class="life_right_button" href="./{{ i.slug }}">читать</a>
+        <a class="life_right_button" href="/life/{{ i.slug }}">читать</a>
         <p class="lie_right_data">{{ i.str_date }}</p>
     </div>
 {% endfor %}

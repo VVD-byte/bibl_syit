@@ -79,7 +79,7 @@
 
 .ssil_{
     color: #EB5757 !important;
-    font-size: 140%;
+    font-size: 140% !important;
 }
 .ssil_:visited{color: #EB5757 !important;}
 .ssil_:hover{color: #BD4B4B !important;}

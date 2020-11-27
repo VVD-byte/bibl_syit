@@ -59,3 +59,6 @@ class life(models.Model):
                 super(life, self).save(*args, **kwargs)
             else:
                 assert (f"ERROR FILE DON'T EXIST {self.file_name}")
+
+class line(models.Model):
+    pass
