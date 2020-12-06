@@ -8,26 +8,27 @@
         font-size: 100% !important;
     }
 </style>
-<div class="h-100" style="display: inline-block;">
+<div class="h-100">
     <div class="h-100 left_work">
-        <div style="margin-right: 10%; float:right;">
-            <table class="work_table">
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2002</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2012</a></td></tr>
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2003</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2013</a></td></tr>
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2004</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2014</a></td></tr>
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2005</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2015</a></td></tr>
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2006</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2016</a></td></tr>
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2007</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2017</a></td></tr>
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2008</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2018</a></td></tr>
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2009</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2019</a></td></tr>
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2010</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2020</a></td></tr>
-                <tr><td class="menu-text" href="#"><a href="#" class="ssil_">2011</a></td><td class="menu-text" href="#"><a href="#" class="ssil_">2021</a></td></tr>
+        <div class="wk_l">
+            <table style="margin-top: 5vh" class="life_left_text">
+                {% for i, item in work_years.items %}
+                    <tr class="life_years">
+                        {% for j, it in item.items %}
+                            {% if it == 0 %}
+                                <td class="tds"><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;" href="/work/year/{{ j }}">{{ j }}</a></td>
+                            {% else %}
+                                <td class="tds"><a class="ssil_" href="/work/year/{{ j }}">{{ j }}</a></td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
             </table>
-            <div style="margin-top: 10px;height: 1px; background-color: rgba(217, 228, 223, 1); width:114%"></div>
-            <div style="margin-top:10px">
+            <div class="work_line"></div>
+            <div class="work_other_project" style="margin-top:10px">
                 <a style="font-size:80%; color:rgba(235, 87, 87, 1) !important">Другие проекты</a>
             </div>
-            <div style="margin-top:10px; height: 1px; background-color: rgba(217, 228, 223, 1); width: 114%"></div>
+            <div class="work_line"></div>
             <div class="work_img">
                 <img src="{% static 'img/life_computer.png' %}" width="70" height="60" style="margin-top: 20%; margin-bottom: 10%; margin-left: 12%;">
                 <p class="life_left_end">© 2002 - 2019, Юрий Ээльмаа</p>
@@ -35,8 +36,8 @@
         </div>
     </div>
     <div class="work_winos float-right">
-        <div class="about_middle_block">
-            <p class="about_middle_text" style="line-height: 1.2em;"> Я всю жизнь живу и работаю в образовании. Был
+        <div class="work_about_middle_block">
+            <p class="work_about_middle_text" style="line-height: 1.2em;"> Я всю жизнь живу и работаю в образовании. Был
                 учеником → студентом → аспирантом. Работал в школе, организациях повышения квалификации, вузах,
                 крупнейшем детском центре «Артек». Преподавал сам, учил других, управлял, создавал проекты. Думаю, что
                 больше, чем за 20 лет работы научился что-то видеть в системе образования.<br/><br/>В этом разделе
@@ -44,18 +45,32 @@
                 не на работе, а по личному размышлению, тексты про образование, можно найти в разделе «По жизни» по
                 одноименному тегу.</p>
         </div>
-        <div class="float-left">
-            <img class="img_file" src="{% static 'img/pdf.png' %}" width="32" height="42">
-            <div class="work_img_text">
-                <div>
-                    <p class="work_fine_name">о некоторых аспектах стрижки травы на спортивных площадках международного
-                        детского центра «артек» и перспективных территориях оного</p>
-                </div>
-                <div>
-                    <p class="work_bottom_data_file">31.12.2018 Журнал «Директор пионерского лагеря», №4, 2018</p>
+        <div>
+        {% for i in data %}
+            <div class="float-left work_file">
+                {% if '.pdf' in i.name_file %}
+                    <img class="img_file" src="{% static 'img/pdf.png' %}" width="32" height="42">
+                {% else %}
+                    <img class="img_file" src="{% static 'img/url.png' %}" width="32" height="42">
+                {% endif %}
+                <div class="work_img_text">
+                    <div>
+                        {% if '.pdf' in i.name_file %}
+                            <a href="/work/{{ i.name_file }}" style="color: black" class="work_fine_name">{{ i.title }}</a>
+                        {% else %}
+                            <a href="{{ i.name_file }}" target="_blank" style="color: black" class="work_fine_name">{{ i.title }}</a>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <p class="work_bottom_data_file">{{ i.title_low }}</p>
+                    </div>
                 </div>
             </div>
+        {% endfor %}
         </div>
     </div>
 </div>
+{% if admin %}
+<a href="/work/add" class="button_add"> ADD NEW POSTS </a>
+{% endif %}
 {% endblock %}

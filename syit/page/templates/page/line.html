@@ -4,25 +4,41 @@
 {% block type %}{{ theme }}{% endblock %}
 {% block content %}
 
-<div class="line_line">
-    <img src="{% static 'img/line_line.png' %}" width="20" height="110" style="margin-left: 0%; padding-top:35%; margin-top: 35%;">
-    <img src="{% static 'img/line_line2.png' %}" width="15" height="100" style="margin-left: 0%;">
-    <img src="{% static 'img/line_line2.png' %}" width="15" height="100" style="margin-left: 0%;">
-    <img src="{% static 'img/line_line2.png' %}" width="15" height="100" style="margin-left: 0%;">
-</div>
-<div class="line_data_block">
-    <p class="line_data_text"><span style="text-transform: uppercase; color: #FF7B6F; font-size: 36px; padding-right: 2%;">31</span> 2006</p>
-</div>
+<div style="background: #ffffff url({% static 'img/line_line.png' %}) repeat; position:absolute; height: 100%; width:3%"></div>
+{% for i in data %}
 <div>
-    <img src="{% static 'img/line_photo1.png' %}" width="62" height="95" style="margin-left: 3%;" class="line_photo">
-    <img src="{% static 'img/line_photo2.png' %}" width="76" height="95" class="line_photo">
-    <img src="{% static 'img/line_photo3.png' %}" width="127" height="95" class="line_photo">
-    <img src="{% static 'img/line_photo4.png' %}" width="127" height="95" class="line_photo">
-</div>
-<div class="line_text_block">
-    <p class="line_text">Странный год: фиолетовая сигарета, задумчивый взгляд и две косички. Странный год: фиолетовая сигарета, задумчивый взгляд и две косички.
-        Странный год: фиолетовая сигарета, задумчивый взгляд и две косички. Странный год: фиолетовая сигарета, задумчивый взгляд и две косички. </p>
-</div>
+    <div class="line_data_block">
+        <p class="line_data_text"><span
+                style="text-transform: uppercase; color: #FF7B6F; font-size: 36px; padding-right: 2%;">{{ i.id }}</span> {{ i.years }}
+        </p>
+    </div>
+    <div>
+        {% if i.image1 %}
+            <img src="{{ i.image1.url }}" style="margin-left: 10%;" class="line_photo">
+        {% endif %}
+        {% if i.image2 %}
+            <img src="{{ i.image2.url }}" class="line_photo">
+        {% endif %}
+        {% if i.image3 %}
+            <img src="{{ i.image3.url }}" class="line_photo">
+        {% endif %}
+        {% if i.image4 %}
+            <img src="{{ i.image4.url }}" class="line_photo">
+        {% endif %}
+    </div>
+    <div class="line_text_block">
+        <p class="line_text">{{ i.text }}</p>
+    </div>
 
-
+    <style>
+        .conn {
+            display: none;
+        }
+    </style>
+</div>
+{% endfor %}
+</div>
+{% if admin %}
+<a href="/line/add" class="button_add">ADD NEW POSTS</a>
+{% endif %}
 {% endblock %}

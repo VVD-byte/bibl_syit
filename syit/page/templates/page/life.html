@@ -21,36 +21,41 @@
             {% endfor %}
         </table>
     </div>
-    <table style="margin-top: 7vh" class="life_left_text">
+    <div class="life_line_h1"></div>
+    <table style="margin-top: 5vh" class="life_left_text">
         {% for i, item in years.items %}
             <tr class="life_years">
                 {% for j, it in item.items %}
                     {% if it == 0 %}
-                        <td><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;" href="/{{ j }}">{{ j }}</a></td>
+                        <td class="tds"><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;" href="/life/year/{{ j }}">{{ j }}</a></td>
                     {% else %}
-                        <td><a class="ssil_" href="/{{ j }}">{{ j }}</a></td>
+                        <td class="tds"><a class="ssil_" href="/life/year/{{ j }}">{{ j }}</a></td>
                     {% endif %}
                 {% endfor %}
             </tr>
         {% endfor %}
     </table>
-    <img src="{% static 'img/life_computer.png' %}" width="70" height="60" style="margin-top: 20%; margin-bottom: 10%; margin-left: 12%;">
+    <img src="{% static 'img/life_computer.png' %}" width="70" height="60" class="life_computer">
     <p class="life_left_end">© 2002 - 2019, Юрий Ээльмаа</p>
 </div>
-<div class="life_line_v">
-    <img src="{% static 'img/life_line_vertical.png' %}" width="0.5" height="335">
-</div>
-<div>
-<div class="life_line_h">
-    <img src="{% static 'img/life_line_horizontal.png' %}" width="55" height="0.5">
-</div>
+
+<div class="life_right_block">
+
+    <div class="life_right_block2">
+        <img src="{% static 'img/life_line_vertical.png' %}" width="0.5" height="340" class="life_line_v">
+        <img src="{% static 'img/life_line_horizontal.png' %}" width="70" height="0.5" class="life_line_h">
+    </div>
+
 {% for i in data %}
-    <div class="life_right_block">
+<div class="life_right__block_text" onclick="window.location='/life/{{ i.slug }}';">
         <p class="life_right_heading">{{ i.heading }} <span class="life_right_lit">{{ i.tag }}</span></p>
         <p class="life_right_text">{{ i.page_text }}</p>
         <a class="life_right_button" href="/life/{{ i.slug }}">читать</a>
-        <p class="lie_right_data">{{ i.str_date }}</p>
-    </div>
+        <p class="life_right_data">{{ i.str_date }}</p>
+</div>
 {% endfor %}
-    </div>
+</div>
+{% if admin %}
+<a href="/life/add" class="button_add">ADD NEW POSTS</a>
+{% endif %}
 {% endblock %}

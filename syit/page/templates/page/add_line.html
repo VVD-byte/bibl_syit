@@ -1,0 +1,43 @@
+{% extends 'syit/base_all.html' %}
+{% load static %}
+{% block title %}{{ theme }}{% endblock %}
+{% block type %}{{ theme }}{% endblock %}
+{% block content %}
+<style>
+    .st {
+        margin-top: 20px
+    }
+
+    .but {
+        color: black;
+        background-color: rgba(235, 87, 87, 1);
+        width: 100px;
+        height: auto;
+        text-align: center;
+    }
+
+    input {
+        margin-top: 10px
+    }
+
+    textarea {
+        margin-top: 10px
+    }
+</style>
+<form action="{% url 'line_create' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <b>Год</b><br />
+    {{ form.years }}
+    <br /><b>Текст</b><br />
+    {{ form.text }}<br />
+    {{ form.image1 }}
+    {{ form.image2 }}
+    {{ form.image3 }}
+    {{ form.image4 }}
+
+    <div class="st">
+        <input type="submit" class="but float-left" value="Отправить">
+        <input type="button" class="but float-right" value="Назад" onclick="window.location.href='/line'">
+    </div>
+</form>
+{% endblock %}

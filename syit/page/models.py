@@ -60,5 +60,16 @@ class life(models.Model):
             else:
                 assert (f"ERROR FILE DON'T EXIST {self.file_name}")
 
-class line(models.Model):
-    pass
+class work(models.Model):
+    name_file = models.CharField(max_length = 50)
+    date = models.DateTimeField(auto_now = False, auto_created = False)
+    title = models.CharField(max_length = 250)
+    title_low = models.CharField(max_length = 150)
+
+class lines(models.Model):
+    years = models.IntegerField()
+    text = models.TextField()
+    image1 = models.ImageField(upload_to = 'user_images', height_field = None, width_field = None, max_length = None, blank = True)
+    image2 = models.ImageField(upload_to = 'user_images', height_field = None, width_field = None, max_length = None, blank = True)
+    image3 = models.ImageField(upload_to = 'user_images', height_field = None, width_field = None, max_length = None, blank = True)
+    image4 = models.ImageField(upload_to = 'user_images', height_field = None, width_field = None, max_length = None, blank = True)
