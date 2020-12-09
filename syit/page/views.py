@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 import logging
 from .models import life, work, lines
 from django.http import FileResponse
-from .forms import linesForms
+from .forms import linesForms, workForms, lifeForms
 passwd = 'vo'
 
 #раздел "по жизни" левый блок
@@ -138,48 +138,14 @@ for i in work_left_years:
         work_left_years[i][j] = work.objects.filter(date__year = j).count()
 #logger = logging.getLogger(__name__)
 
-def da(str):
-    print(str*100,'\n'*3)
-
 def line_add(requests):
-    if check_admin(requests):
-        if requests.method == 'GET':
-            form = linesForms()
-            return render(requests, 'page/add_line.html', context = {'form':form})
-        elif requests.method == 'POST':
-            add_form = linesForms(requests.POST, requests.FILES)
-            if add_form.is_valid():
-                add_form.save()
-            else:
-                da('1')
-                print(add_form.errors)
-                return render(requests, 'page/add_line.html', context = {'form':add_form})
-    return redirect('/line')
+    return add_s(requests, 'page/add_life.html', linesForms, '/line')
 
 def life_add(requests):
-    pass
+    return add_s(requests, 'page/add_life.html', lifeForms, '/life')
 
 def work_add(requests):
-    pass
-
-def check_admin(q):
-    try:
-        try:
-            if q.COOKIES['dats_A'] == passwd:
-                return True
-            elif q.GET['admin'] == passwd:
-                return True
-            else: return False
-        except: return q.GET['admin'] == passwd
-        else: return False
-    except:
-        return False
-
-def adm(requests, templ, contex):
-    a = render(requests, templ, context = contex)
-    if check_admin(requests): a.set_cookie('dats_A', passwd)
-    else: a.set_cookie('dats_A', 'yxadi')
-    return a
+    return add_s(requests, 'page/add_work.html', workForms, '/work')
 
 def page(requests):
     #logger.info(f"{requests.META['REMOTE_ADDR']} - page")
@@ -194,7 +160,6 @@ def line(requests):
     data = list(lines.objects.all())
     data.reverse()
     return adm(requests, "page/line.html", {'theme':'ЛИНЕЙКА РОСТА', 'conn':True, 'data':data, 'admin':check_admin(requests)})
-
 
 def about(requests):
     #logger.info(f"{requests.META['REMOTE_ADDR']} - about")
@@ -237,3 +202,40 @@ def text(requests):
 
 #def err404(requests):
     #logger.warning(f"{requests.META['REMOTE_ADDR']} - ERROR404")
+
+#########обработчики
+
+def add_s(requests, templates, Form, tem):
+    if check_admin(requests):
+        if requests.method == 'GET':
+            form = Form()
+            return render(requests, templates, context = {'form':form})
+        elif requests.method == 'POST':
+            add_form = Form(requests.POST, requests.FILES)
+            if add_form.is_valid():
+                add_form.save()
+                return redirect(tem)
+            else:
+                print(add_form.errors)
+                return render(requests, templates, context={'form': add_form})
+    return redirect(tem)
+
+def check_admin(q):
+    try:
+        try:
+            if q.COOKIES['dats_A'] == passwd:
+                return True
+            elif q.GET['admin'] == passwd:
+                return True
+            else: return False
+        except: return q.GET['admin'] == passwd
+        else: return False
+    except:
+        return False
+
+def adm(requests, templ, contex):
+    a = render(requests, templ, context = contex)
+    if check_admin(requests): a.set_cookie('dats_A', passwd)
+    else:
+        a.set_cookie('dats_A', 'yxadi')
+    return a

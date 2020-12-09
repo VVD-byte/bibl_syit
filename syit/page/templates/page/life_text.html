@@ -22,72 +22,23 @@
             {% endfor %}
         </table>
     </div>
-    <table style="margin-top: 7vh" class="life_left_text">
-        <tr class="life_years">
-            <td><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;"
-                   href="#">2000</a></td>
-            <td><a class="ssil_" href="#">2010</a></td>
-            <td><a class="ssil_" href="#">2020</a></td>
-        </tr>
-        <tr class="life_years">
-            <td><a class="ssil_" style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" href="#">2001</a>
-            </td>
-            <td><a class="ssil_" href="#">2011</a></td>
-            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2021</a>
-            </td>
-        </tr>
-        <tr class="life_years">
-            <td><a class="ssil_" href="#">2002</a></td>
-            <td><a class="ssil_" href="#">2012</a></td>
-            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2022</a>
-            </td>
-        </tr>
-        <tr class="life_years">
-            <td><a class="ssil_" href="#">2003</a></td>
-            <td><a class="ssil_" href="#">2013</a></td>
-            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2023</a>
-            </td>
-        </tr>
-        <tr class="life_years">
-            <td><a class="ssil_" href="#">2004</a></td>
-            <td><a class="ssil_" href="#">2014</a></td>
-            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2024</a>
-            </td>
-        </tr>
-        <tr class="life_years">
-            <td><a class="ssil_" href="#">2005</a></td>
-            <td><a class="ssil_" href="#">2015</a></td>
-            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2025</a>
-            </td>
-        </tr>
-        <tr class="life_years">
-            <td><a class="ssil_" href="#">2006</a></td>
-            <td><a class="ssil_" href="#">2016</a></td>
-            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2026</a>
-            </td>
-        </tr>
-        <tr class="life_years">
-            <td><a class="ssil_" href="#">2007</a></td>
-            <td><a class="ssil_" href="#">2017</a></td>
-            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2027</a>
-            </td>
-        </tr>
-        <tr class="life_years">
-            <td><a class="ssil_" href="#">2008</a></td>
-            <td><a class="ssil_" href="#">2018</a></td>
-            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2028</a>
-            </td>
-        </tr>
-        <tr class="life_years">
-            <td><a class="ssil_" href="#">2009</a></td>
-            <td><a class="ssil_" href="#">2019</a></td>
-            <td><a style="pointer-events: none;color:rgba(217, 228, 223, 1) !important;" class="ssil_" href="#">2029</a>
-            </td>
-        </tr>
+    <table style="margin-top: 5vh" class="life_left_text">
+        {% for i, item in years.items %}
+            <tr class="life_years">
+                {% for j, it in item.items %}
+                    {% if it == 0 %}
+                        <td class="tds"><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;" href="/life/year/{{ j }}">{{ j }}</a></td>
+                    {% else %}
+                        <td class="tds"><a class="ssil_" href="/life/year/{{ j }}">{{ j }}</a></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
     </table>
-    <img src="{% static 'img/life_computer.png' %}" width="70" height="60"
-         style="margin-top: 20%; margin-bottom: 10%; margin-left: 12%;">
-    <p class="life_left_end">© 2002 - 2019, Юрий Ээльмаа</p>
+    <div>
+        <img src="{% static 'img/life_computer.png' %}" width="70" height="60" style="margin-top: 20%; margin-bottom: 10%; margin-left: 12%;">
+        <p class="life_left_end">© 2002 - 2019, Юрий Ээльмаа</p>
+    </div>
 </div>
 <div class="life_line_v">
     <img src="{% static 'img/life_line_vertical.png' %}" width="0.5" height="335">
@@ -98,9 +49,9 @@
     </div>
     <div>
         <p style="white-space:pre-line">
-            {{ data.tag }}<br />
-            <b>{{ data.heading }}</b><br />
-            {{ data.date }}
+            <a class="life_tag">{{ data.tag }}</a>
+            <a class="life_name"><b>{{ data.heading }}</b></a>
+            <a class="life_date">{{ data.str_date }}</a><br />
             {{ data.text }}
         </p>
     </div>

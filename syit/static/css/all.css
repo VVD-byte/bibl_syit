@@ -332,6 +332,35 @@ td{
     color: #0C3440;
 }
 
+.life_tag{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.3vh;
+    text-transform: uppercase;
+    color: #447D8D !important;
+}
+
+.life_name{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size:4vh;
+    text-transform: uppercase;
+    color: #0C3440 !important;
+    width:100%;
+}
+
+.life_date{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: justify;
+    color: #9FA2B1 !important;
+}
+
 .text-nav-left{
     font-family: Montserrat;
     font-weight: bold;

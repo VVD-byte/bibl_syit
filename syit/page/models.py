@@ -26,7 +26,6 @@ dic = {'ь':'', 'ъ':'', 'а':'a', 'б':'b', 'в':'v',
        'ц':'tc', 'ч':'ch', 'ш':'sh', 'щ':'shch',
        'ы':'y', 'э':'e', 'ю':'iu', 'я':'ia', ' ':'_'}
 
-# Create your models here.
 class life(models.Model):
     file_name = models.CharField(null = False, max_length = 150)
     date = models.DateTimeField(auto_now = False, auto_created = False)
@@ -38,12 +37,16 @@ class life(models.Model):
     slug = models.CharField(max_length = 100)
 
     def save(self, *args, **kwargs):
-        from .views import life_left
+        from .views import life_left, life_left_years
         if self.file_name:
             if os.path.exists(self.file_name):
                 self.tag = self.tag.upper()
                 try:
                     life_left[self.tag] += 1
+                    for item, i in life_left_years.items:
+                        if self.date.year in item:
+                            life_left_years[i][self.date.year] += 1
+                            break
                 except:
                     pass ########################добавить обработку добавления новых значений life_left_no_years
                 text = textract.process(self.file_name).decode('utf-8').split('\n\n')

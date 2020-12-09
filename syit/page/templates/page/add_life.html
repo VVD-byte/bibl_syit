@@ -3,17 +3,14 @@
 {% block title %}{{ theme }}{% endblock %}
 {% block type %}{{ theme }}{% endblock %}
 {% block content %}
-<form action="{% url 'line_create' %}" method="post" enctype="multipart/form-data">
+<form action="{% url 'life_create' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <b>Год</b><br />
-    {{ form.years }}
-    <br /><b>Текст</b><br />
-    {{ form.text }}<br />
-    {{ form.image1 }}
-    {{ form.image2 }}
-    {{ form.image3 }}
-    {{ form.image4 }}
-
+    <b>Файл pdf</b><br />
+    {{ form.file_name }}
+    <br /><b>Название файла</b><br />
+    {{ form.tag }}
+    <br /><b>Нижняя мелкая подпись</b><br />
+    {{ form.page_text }}
     <div class="st">
         <input type="submit" class="but float-left" value="Отправить">
         <input type="button" class="but float-right" value="Назад" onclick="window.location.href='/line'">
