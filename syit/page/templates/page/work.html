@@ -16,7 +16,7 @@
                     <tr class="life_years">
                         {% for j, it in item.items %}
                             {% if it == 0 %}
-                                <td class="tds"><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;" href="/work/year/{{ j }}">{{ j }}</a></td>
+                                <td class="tds"><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;">{{ j }}</a></td>
                             {% else %}
                                 <td class="tds"><a class="ssil_" href="/work/year/{{ j }}">{{ j }}</a></td>
                             {% endif %}
@@ -56,7 +56,7 @@
                 <div class="work_img_text">
                     <div>
                         {% if '.pdf' in i.name_file %}
-                            <a href="/work/{{ i.name_file }}" style="color: black" class="work_fine_name">{{ i.title }}</a>
+                            <a href="/user_images/work_document/{{ i.name_file }}" style="color: black" class="work_fine_name">{{ i.title }}</a>
                         {% else %}
                             <a href="{{ i.name_file }}" target="_blank" style="color: black" class="work_fine_name">{{ i.title }}</a>
                         {% endif %}

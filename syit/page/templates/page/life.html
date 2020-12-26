@@ -17,7 +17,7 @@
     <div class="life_left_text">
         <table>
             {% for i, number in left.items %}
-                <tr><td><a href="/{{ i }}" class="ssil_">{{ i }}</a><a href="#" class="life_left_number"> {{ number }}</a></td></tr>
+                <tr><td><a href="/life/year/{{ i }}" class="ssil_">{{ i }}</a><a class="life_left_number"> {{ number }}</a></td></tr>
             {% endfor %}
         </table>
     </div>
@@ -27,7 +27,7 @@
             <tr class="life_years">
                 {% for j, it in item.items %}
                     {% if it == 0 %}
-                        <td class="tds"><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;" href="/life/year/{{ j }}">{{ j }}</a></td>
+                        <td class="tds"><a class="ssil_" style="pointer-events: none; color:rgba(217, 228, 223, 1) !important;">{{ j }}</a></td>
                     {% else %}
                         <td class="tds"><a class="ssil_" href="/life/year/{{ j }}">{{ j }}</a></td>
                     {% endif %}

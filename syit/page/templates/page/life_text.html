@@ -9,7 +9,12 @@
         display: inline-block;
         color: #FF7B6F !important;
         font-size: 3.5vw !important;
-    }}
+    }
+    .img_{
+        height:0px !important;
+        display:none;
+    }
+    }
 
 </style>
 
@@ -18,7 +23,7 @@
     <div class="life_left_text">
         <table>
             {% for i, number in left.items %}
-                <tr><td><a href="/{{ i }}" class="ssil_">{{ i }}</a><a href="#" class="life_left_number"> {{ number }}</a></td></tr>
+                <tr><td><a href="/life/year/{{ i }}" class="ssil_">{{ i }}</a><a href="#" class="life_left_number"> {{ number }}</a></td></tr>
             {% endfor %}
         </table>
     </div>
@@ -36,7 +41,7 @@
         {% endfor %}
     </table>
     <div>
-        <img src="{% static 'img/life_computer.png' %}" width="70" height="60" style="margin-top: 20%; margin-bottom: 10%; margin-left: 12%;">
+        <img class="img_" src="{% static 'img/life_computer.png' %}" width="70" height="60" style="margin-top: 20%; margin-bottom: 10%; margin-left: 12%;">
         <p class="life_left_end">© 2002 - 2019, Юрий Ээльмаа</p>
     </div>
 </div>

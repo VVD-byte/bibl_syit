@@ -13,7 +13,11 @@ class linesForms(forms.Form):
     image4 = forms.ImageField(max_length = None, required = False)
 
     def save(self):
+        try:
+            a = lines.objects.all()[lines.objects.all().count() - 1].id + 1
+        except: a = 1
         new_lines = lines.objects.create(
+            id = a,
             years = self.cleaned_data['years'],
             text = self.cleaned_data['text'],
             image1 = self.cleaned_data['image1'],
@@ -60,4 +64,6 @@ class lifeForms(forms.Form):
     slug = forms.CharField(required = False)
 
     def save(self):
-        pass
+        new_life = life.objects.create(
+
+        )

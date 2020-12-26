@@ -14,16 +14,16 @@
     </div>
     <div>
         {% if i.image1 %}
-            <img src="{{ i.image1.url }}" style="margin-left: 10%;" class="line_photo">
+            <img src="{{ i.image1.url }}" style="margin-left: 10%;" class="imgs line_photo">
         {% endif %}
         {% if i.image2 %}
-            <img src="{{ i.image2.url }}" class="line_photo">
+            <img src="{{ i.image2.url }}" class="imgs line_photo">
         {% endif %}
         {% if i.image3 %}
-            <img src="{{ i.image3.url }}" class="line_photo">
+            <img src="{{ i.image3.url }}" class="imgs line_photo">
         {% endif %}
         {% if i.image4 %}
-            <img src="{{ i.image4.url }}" class="line_photo">
+            <img src="{{ i.image4.url }}" class="imgs line_photo">
         {% endif %}
     </div>
     <div class="line_text_block">
@@ -33,6 +33,11 @@
     <style>
         .conn {
             display: none;
+        }
+        .imgs{
+            border-radius:0px !important;
+            height:20vh !important;
+            width:auto;
         }
     </style>
 </div>

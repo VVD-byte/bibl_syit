@@ -139,7 +139,7 @@ for i in work_left_years:
 #logger = logging.getLogger(__name__)
 
 def line_add(requests):
-    return add_s(requests, 'page/add_life.html', linesForms, '/line')
+    return add_s(requests, 'page/add_line.html', linesForms, '/line')
 
 def life_add(requests):
     return add_s(requests, 'page/add_life.html', lifeForms, '/life')
@@ -170,9 +170,6 @@ def _work(requests):
     data = work.objects.all()
     return adm(requests, "page/work.html", {'theme':'ПО ДЕЛУ', 'data':data, 'work_years':work_left_years, 'admin':check_admin(requests)})
 
-def _work_read(requests, slug):
-    return FileResponse(open(slug, 'rb'), content_type='application/pdf')
-
 def _work_year(requests, year):
     data = work.objects.filter(date__year = year)
     return render(requests, "page/work.html", context = {'theme':'ПО ДЕЛУ', 'data':data, 'work_years':work_left_years})
@@ -185,8 +182,10 @@ def lifes(requests):
     return adm(requests, "page/life.html", {'theme':'ПО ЖИЗНИ', 'data':data, 'left':life_left, 'years':life_left_years, 'admin':check_admin(requests)})
 
 def lifes_read(requests, slug):
-    data = life.objects.filter(slug = slug)[0]
-    print(life_left_years)
+    try:
+        data = life.objects.filter(slug = slug)[0]
+    except:
+        data = ''
     return render(requests, "page/life_text.html", context = {'theme':'ПО ЖИЗНИ', 'data':data, 'left':life_left, 'years':life_left_years})
 
 def left_life_tag(requests, slug):
@@ -208,8 +207,7 @@ def text(requests):
 def add_s(requests, templates, Form, tem):
     if check_admin(requests):
         if requests.method == 'GET':
-            form = Form()
-            return render(requests, templates, context = {'form':form})
+            return render(requests, templates, context = {'form':Form()})
         elif requests.method == 'POST':
             add_form = Form(requests.POST, requests.FILES)
             if add_form.is_valid():

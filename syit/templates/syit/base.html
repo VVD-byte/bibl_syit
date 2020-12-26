@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+<style>
+    @media screen and (max-device-width: 991px) {
+        .b{display:none;}
+        .bod{
+            background:url('{% static "img/podl.png" %}') no-repeat center center fixed !important; background-size: 100% 100% !important;
+        }
+        nav{
+        background: rgba(196, 196, 196, 0.48);
+        }
+    }
+</style>
+<button class="b" style="left:41.2%; top:18%; width:3.5vh; height:3.5vh; background-color:blue; position:absolute; border: none; border-radius: 40px;" onclick="window.location.href = '/about';"></button>
+<button class="b" style="left:44.8%; top:40.2%; width:3.5vh; height:3.5vh; background-color:blue; position:absolute; border: none; border-radius: 40px;" onclick="window.location.href = '/life';"></button>
+<button class="b" style="left:56.2%; top:42.3%; width:3.5vh; height:3.5vh; background-color:blue; position:absolute; border: none; border-radius: 40px;" onclick="window.location.href = '/cv';"></button>
+<button class="b" style="left:47.5%; top:51%; width:3.5vh; height:3.5vh; background-color:blue; position:absolute; border: none; border-radius: 40px;" onclick="window.location.href = '/work';"></button>
+<button class="b" style="left:48.2%; top:72%; width:3.5vh; height:3.5vh; background-color:blue; position:absolute; border: none; border-radius: 40px;" onclick="window.location.href = '/';"></button>
+<button class="b" style="left:63.8%; top:66%; width:3.5vh; height:3.5vh; background-color:blue; position:absolute; border: none; border-radius: 40px;" onclick="window.location.href = '/line';"></button>
+
 <head>
+    <title>EELMAA.NET</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
@@ -17,12 +36,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+
 </head>
-<body style="background:url('{% static "img/Page_Index.png" %}') no-repeat center center fixed; background-size: auto 100%;">
+<body class="bod" style="background:url('{% static "img/Page_Index.png" %}') no-repeat center center fixed; background-size: 100% 100%;">
 <div class="start_nav" style="display:inline-block; width:100%">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand text-nav-left float-left" style="font-size:150% !important; padding:10%;">EELMA.NET</a>
-                <button style="display:inline-block;" class="float-right navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand text-nav-left float-left" style="font-size:150% !important; padding:10%; color: #EB5757 !important;">EELMA.NET</a>
+                <button style="display:inline-block; background-color:#447D8D; border-radius:4ч0%;" class="float-right navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
